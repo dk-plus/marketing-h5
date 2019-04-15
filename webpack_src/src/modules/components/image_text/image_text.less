@@ -1,0 +1,46 @@
+.image-text {
+  img {
+    height: 100%;
+  }
+  .image-text-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    .text-area {
+      flex: 1;
+      margin-right: 10px;
+      .title {
+        color: #000;
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+      .desc {
+        display: flex;
+        justify-content: space-between;
+        color: rgba(0,0,0,.65);
+        .desc-text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100px;
+          flex: 1;
+        }
+        .read-more {
+          color: #1890ff;
+        }
+      }
+    }
+    .image-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+  }
+}

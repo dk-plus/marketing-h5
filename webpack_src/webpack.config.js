@@ -39,6 +39,13 @@ const _config = {
         })
       },
       {
+        test: /\.css$/,
+        use: extractLess.extract({
+          use: ['css-loader'],
+          fallback: 'style-loader'
+        })
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {

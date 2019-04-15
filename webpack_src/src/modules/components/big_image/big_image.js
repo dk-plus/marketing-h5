@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const artT = require('art-template');
+require('./big_image.less');
 
 const Index = (() => {
 
@@ -15,14 +16,16 @@ const Index = (() => {
   const _g = {
     // 渲染数据
     data: {},
+    id: '',
   };
 
   // 枚举
   const ENUM = {};
 
   // 初始化
-  _e.init = (data) => {
-    _g.data = data;
+  _e.init = (data, index) => {
+    _g.data = JSON.parse(data);
+    _g.id = `big_image_${index}`;
     console.log('大图', _g)
     return render();
   }
@@ -32,7 +35,7 @@ const Index = (() => {
     const tpl = require('./big_image.tpl')();
     const tplRender = artT.compile(tpl);
 
-    return tplRender(_g.data);
+    return tplRender(_g);
   }
 
   // 初始化事件

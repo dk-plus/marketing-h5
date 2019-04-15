@@ -9,3 +9,9 @@ export const MODULE_TYPE = {
   SHARE: 6, // 分享
   VIDEO: 7, // 视频
 };
+
+// 状态
+export const STATUS = {
+  ONLINE: 1, //上线
+  OFFLINE: 0, //下线
+};

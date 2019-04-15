@@ -1,6 +1,6 @@
 const $ = require('jquery');
 const artT = require('art-template');
-require('./image_text.less');
+require('./404.less');
 
 const Index = (() => {
 
@@ -9,37 +9,39 @@ const Index = (() => {
 
   // 操作dom
   const ele = {
-    ROOT: '',
+    ROOT: '#root',
   };
 
   // 全局操作数据
   const _g = {
     // 渲染数据
     data: {},
-    id: '',
   };
 
   // 枚举
   const ENUM = {};
 
+  // 开发配置
+  const config = {
+    mockMode: true,
+  }
+
   // 初始化
-  _e.init = (data, index) => {
-    _g.data = JSON.parse(data);
-    _g.id = `image_text_${index}`;
-    console.log('图文', _g)
-    return render();
+  _e.init = (data) => {
+    _g.data = data;
+    render();
   }
 
   // 渲染函数
   function render() {
-    const tpl = require('./image_text.tpl')();
+    const tpl = require('./404.tpl')();
     const tplRender = artT.compile(tpl);
 
-    return tplRender(_g);
+    $(ele.ROOT).html(tplRender(_g.data));
   }
 
   // 初始化事件
-  function initEvent() { }
+  function initEvent() {}
 
   return _e;
 
